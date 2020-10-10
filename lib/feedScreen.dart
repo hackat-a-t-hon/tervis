@@ -99,23 +99,6 @@ class FeedScreenState extends State<FeedScreen> {
             SizedBox(
               height: 20,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: map<Widget>(imgList, (index, url) {
-                return Container(
-                  width: 10.0,
-                  height: 30.0,
-                  margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: _current == index ? Colors.redAccent : Colors.green,
-                  ),
-                );
-              }),
-            ),
-            SizedBox(
-              height: 20.0,
-            ),
             
           ],
         ),
