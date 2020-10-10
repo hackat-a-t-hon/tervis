@@ -56,13 +56,14 @@ class TalkWithSomeone extends StatelessWidget {
         Container(
             width: 350,
             height: 150,
-            margin: EdgeInsets.fromLTRB(60, 360, 10, 0),
+            margin: EdgeInsets.fromLTRB(60, 250, 10, 0),
             padding: EdgeInsets.all(10),
             child: Card(
               child: Column(
                 children: [
                   const ListTile(
                     title: Text('Talk With an Expert'),
+                    contentPadding: EdgeInsets.fromLTRB(20, 10, 10, 15),
                     subtitle: Text(
                         'Hi, I am expert you can talk with me expert since 1 hour'),
                   )
@@ -75,15 +76,21 @@ class TalkWithSomeone extends StatelessWidget {
         Container(
             width: 350,
             height: 150,
-            margin: EdgeInsets.fromLTRB(10, 560, 0, 0),
+            margin: EdgeInsets.fromLTRB(10, 460, 0, 0),
             padding: EdgeInsets.all(10),
             child: Card(
               child: Column(
                 children: [
                   const ListTile(
-                    title: Text('Talk With an Volunteer'),
+                    title: Text(
+                      'Talk With an Volunteer',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    contentPadding: EdgeInsets.fromLTRB(20, 10, 10, 15),
                     subtitle: Text(
-                        'Hi, I am Volunteer you can talk with me expert since 1 hour'),
+                      'Hi, I am Volunteer you can talk with me expert since 1 hour',
+                    ),
                   )
                 ],
               ),
