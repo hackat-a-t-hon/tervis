@@ -8,3 +8,4 @@ const Color kPrimaryRed = Color(0xff96384e);
 const Color kPrimaryOrange = Color(0xffeda48e);
 const Color kPrimiaryYellow = Color(0xffeed284);
 const Color kSecondaryLightBlue = Color(0xff76d5ff);
+const Color kPrimaryGray = Color(0xff757575);
