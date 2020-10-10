@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'constants.dart';
 import 'talkWithSomeone.dart';
-
+import 'feedScreen.dart';
 void main() {
   runApp(MyApp());
 }
@@ -32,9 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Container(
       child: Text("Home"),
     ),
-    Container(
-      child: Text("Feeds"),
-    ),
+    FeedScreen(),
     Container(
       child: Text("Happy Quiz"),
     ),
