@@ -5,6 +5,7 @@ import 'constants.dart';
 import 'feedScreen.dart';
 import 'homepageReturnScreen.dart';
 import 'profileScreen.dart';
+import 'splashScreen.dart';
 import 'talkWithSomeone.dart';
 
 void main() {
@@ -18,21 +19,22 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      initialRoute: "/",
+      initialRoute: "/splash",
       routes: {
-        '/': (context) => SplashScreen(),
+        '/': (context) => HomeScreen(),
+        '/splash': (context) => SplashScreen()
       },
       // home: SplashScreen(),
     );
   }
 }
 
-class SplashScreen extends StatefulWidget {
+class HomeScreen extends StatefulWidget {
   @override
-  _SplashScreenState createState() => _SplashScreenState();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _HomeScreenState extends State<HomeScreen> {
   final tabs = [
     HomePage(),
     FeedScreen(),
