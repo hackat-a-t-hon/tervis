@@ -15,14 +15,30 @@ class FeedScreenState extends State<FeedScreen> {
   //
   CarouselSlider carouselSlider;
   int _current = 0;
-  List imgList = [
-    'https://images.unsplash.com/photo-1502117859338-fd9daa518a9a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
-    'https://images.unsplash.com/photo-1554321586-92083ba0a115?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
-    'https://images.unsplash.com/photo-1536679545597-c2e5e1946495?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
-    'https://images.unsplash.com/photo-1543922596-b3bbaba80649?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
-    'https://images.unsplash.com/photo-1502943693086-33b5b1cfdf2f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80'
-  ];
+  // List imgList = [
+  //   'https://images.unsplash.com/photo-1502117859338-fd9daa518a9a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+  //   'https://images.unsplash.com/photo-1554321586-92083ba0a115?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+  //   'https://images.unsplash.com/photo-1536679545597-c2e5e1946495?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+  //   'https://images.unsplash.com/photo-1543922596-b3bbaba80649?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+  //   'https://images.unsplash.com/photo-1502943693086-33b5b1cfdf2f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80'
+  // ];
  
+  List feeds = [
+    {
+      'title': "CSVTU University Burnt Down",
+      'content': "Csvtu university burnt down by some bad boys in bitd,"
+    },
+
+    {
+      'title': "CSK WON THE IPL @)@) FINALS",
+      'content': "The indian captian has once again proved it."
+    },
+    {
+      'title': "Tervis, a mental health app",
+      'content': "team tervis from bitd won the hack the mountain hackathon."
+    },
+  ];
+
   List<T> map<T>(List list, Function handler) {
     List<T> result = [];
     for (var i = 0; i < list.length; i++) {
@@ -63,7 +79,8 @@ class FeedScreenState extends State<FeedScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             carouselSlider = CarouselSlider(
-              height: 400.0,
+            height: MediaQuery.of(context).size.height/1.5,
+              
               initialPage: 0,
               enlargeCenterPage: true,
               // autoPlay: true,
@@ -78,27 +95,50 @@ class FeedScreenState extends State<FeedScreen> {
                   _current = index;
                 });
               },
-              items: imgList.map((imgUrl) {
+              items: feeds.map((feedItem) {
+                print(feedItem);
                 return Builder(
                   builder: (BuildContext context) {
                     return Container(
-                      width: MediaQuery.of(context).size.width,
+                      constraints: BoxConstraints(minWidth: 300, maxWidth: 500),
+
+                      width: MediaQuery.of(context).size.width/1.5,
                       margin: EdgeInsets.symmetric(horizontal: 10.0),
-                      decoration: BoxDecoration(
-                        color: Colors.green,
-                      ),
-                      child: Image.network(
-                        imgUrl,
-                        fit: BoxFit.fill,
-                      ),
+                      // decoration: BoxDecoration(
+                      //   color: Colors.green,
+                      // ),
+                      child: Card(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+           ListTile(
+            
+            title: Text(feedItem['title']),
+            subtitle: Text(feedItem['content']),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: <Widget>[
+              TextButton(
+                child: const Text('Read More'),
+                onPressed: () { /* ... */ },
+              ),
+              const SizedBox(width: 8),
+            ],
+          ),
+        ],
+      ),
+    ),
+
                     );
                   },
                 );
               }).toList(),
             ),
-            SizedBox(
-              height: 20,
-            ),
+            // SizedBox(
+            //   height: 20,
+            // ),
             
           ],
         ),
