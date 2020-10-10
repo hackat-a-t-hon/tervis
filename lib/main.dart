@@ -24,11 +24,28 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  final tabs = [1, 2, 3, 4];
+  final tabs = [
+    Container(
+      child: Text("Home"),
+    ),
+    Container(
+      child: Text("Feeds"),
+    ),
+    Container(
+      child: Text("Happy Quiz"),
+    ),
+    Container(
+      child: Text("Talk"),
+    ),
+    Container(
+      child: Text("Profile"),
+    )
+  ];
   int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: tabs[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         unselectedItemColor: kPrimaryGray,
