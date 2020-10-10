@@ -104,41 +104,43 @@ class FeedScreenState extends State<FeedScreen> {
                       // ),
 
                       child: Card(
-                        elevation: 10,
-                        child: Container(
-                         decoration: BoxDecoration(
-    gradient: LinearGradient(
-      colors: [Color(0Xff04354B), Color(0XffB2FEFA)],
-      begin: FractionalOffset.topCenter,
-            end: FractionalOffset.bottomCenter,
-      )
-  ), 
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: <Widget>[
-                            ListTile(
-                              title: Text(feedItem['title'],
-                                      style: TextStyle(color: Colors.white.withOpacity(1)),
-),
-                              subtitle: Text(feedItem['content'],
-                                      style: TextStyle(color: Colors.white.withOpacity(0.6)),
-),
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              crossAxisAlignment: CrossAxisAlignment.end,
+                          elevation: 10,
+                          child: Container(
+                            decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                              colors: [Color(0Xff04354B), Color(0XffB2FEFA)],
+                              begin: FractionalOffset.topCenter,
+                              end: FractionalOffset.bottomCenter,
+                            )),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
                               children: <Widget>[
-                                TextButton(
-                                  child: const Text('Read More'),
-                                  onPressed: () {/* ... */},
+                                ListTile(
+                                  title: Text(
+                                    feedItem['title'],
+                                    style: TextStyle(
+                                        color: Colors.white.withOpacity(1)),
+                                  ),
+                                  subtitle: Text(
+                                    feedItem['content'],
+                                    style: TextStyle(
+                                        color: Colors.white.withOpacity(0.6)),
+                                  ),
                                 ),
-                                const SizedBox(width: 8),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: <Widget>[
+                                    TextButton(
+                                      child: const Text('Read More'),
+                                      onPressed: () {/* ... */},
+                                    ),
+                                    const SizedBox(width: 8),
+                                  ],
+                                ),
                               ],
                             ),
-                          ],
-                        ),
-                        )
-                      ),
+                          )),
                     );
                   },
                 );

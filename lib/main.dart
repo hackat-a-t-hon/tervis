@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'constants.dart';
 import 'talkWithSomeone.dart';
 import 'feedScreen.dart';
+import 'chatScreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -33,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Container(
       child: Text("Home"),
     ),
-    FeedScreen(),
+    Chat(),
     Container(
       child: Text("Happy Quiz"),
     ),
