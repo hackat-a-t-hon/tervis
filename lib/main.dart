@@ -5,6 +5,7 @@ import 'constants.dart';
 import 'homepageReturnScreen.dart';
 import 'talkWithSomeone.dart';
 import 'profileScreen.dart';
+import 'feedScreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -34,10 +35,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   final tabs = [
     HomePage(),
-    // FeedScreen(),
-    Container(
-      child: Text("Profile"),
-    ),
+    FeedScreen(),
     HappyQuiz(),
     TalkWithSomeone(),
     ProfileScreen(),
