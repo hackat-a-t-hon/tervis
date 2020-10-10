@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:tervis/happyQuizScreen.dart';
 
 import 'constants.dart';
+import 'feedScreen.dart';
 import 'homepageReturnScreen.dart';
-import 'talkWithSomeone.dart';
 import 'profileScreen.dart';
+import 'talkWithSomeone.dart';
 
 void main() {
   runApp(MyApp());
@@ -34,10 +35,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   final tabs = [
     HomePage(),
-    // FeedScreen(),
-    Container(
-      child: Text("Profile"),
-    ),
+    FeedScreen(),
     HappyQuiz(),
     TalkWithSomeone(),
     ProfileScreen(),
