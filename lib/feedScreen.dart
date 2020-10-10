@@ -96,7 +96,7 @@ class FeedScreenState extends State<FeedScreen> {
                 });
               },
               items: feeds.map((feedItem) {
-                print(feedItem);
+                
                 return Builder(
                   builder: (BuildContext context) {
                     return Container(
@@ -108,6 +108,7 @@ class FeedScreenState extends State<FeedScreen> {
                       //   color: Colors.green,
                       // ),
                       child: Card(
+                        elevation: 10,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
