@@ -2,7 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:just_audio/just_audio.dart';
+// import 'package:just_audio/just_audio.dart';
 import 'package:tervis/constants.dart';
 
 class HomePage extends StatefulWidget {
@@ -14,7 +14,7 @@ class _HomePageState extends State<HomePage> {
   var isSelected = [false, false];
   bool isAudioPlaying = false;
   String textIn = "Press A Button To\n Start";
-  AudioPlayer audioPlayer = AudioPlayer();
+  // AudioPlayer audioPlayer = AudioPlayer();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -47,7 +47,7 @@ class _HomePageState extends State<HomePage> {
             "Hello! Abhishek,\nIt's Wonderful to see you again",
             textAlign: TextAlign.left,
             style: TextStyle(
-                fontWeight: FontWeight.w600, fontSize: 18, letterSpacing: 1.2),
+                fontWeight: FontWeight.w600, fontSize: 16, letterSpacing: 1.2),
           ),
           Stack(
             children: [
@@ -71,12 +71,12 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
           Padding(
-            padding: const EdgeInsets.all(14.0),
+            padding: const EdgeInsets.all(10.0),
             child: ToggleButtons(
               children: [Text("   Music    "), Text("   Breathe   ")],
               isSelected: isSelected,
               onPressed: (index) {
-                play(audioPlayer);
+                // play(audioPlayer);
                 setState(() {
                   isSelected[index] = !isSelected[index];
                   isSelected[(index + 1) % 2] = false;
