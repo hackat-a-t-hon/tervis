@@ -10,22 +10,42 @@ class HappyQuiz extends StatefulWidget {
 
 class _HappyQuizState extends State<HappyQuiz> {
   var _radioValue1 = 0;
+  var _radioValue2 = 0;
+  var _radioValue3 = 0;
+  var _radioValue4 = 0;
   void _handleRadioValueChange1(int value) {
     setState(() {
-      _radioValue1 = value;
+      _radioValue1 = 1;
+      _radioValue2 = 0;
+      _radioValue3 = 0;
+      _radioValue4 = 0;
+    });
+  }
 
-      switch (_radioValue1) {
-        case 0:
-          // Fluttertoast.showToast(msg: 'Correct !',toastLength: Toast.LENGTH_SHORT);
-          // correctScore++;
-          break;
-        case 1:
-          // Fluttertoast.showToast(msg: 'Try again !',toastLength: Toast.LENGTH_SHORT);
-          break;
-        case 2:
-          // Fluttertoast.showToast(msg: 'Try again !',toastLength: Toast.LENGTH_SHORT);
-          break;
-      }
+  void _handleRadioValueChange2(int value) {
+    setState(() {
+      _radioValue1 = 0;
+      _radioValue2 = 1;
+      _radioValue3 = 0;
+      _radioValue4 = 0;
+    });
+  }
+
+  void _handleRadioValueChange3(int value) {
+    setState(() {
+      _radioValue1 = 0;
+      _radioValue2 = 0;
+      _radioValue3 = 1;
+      _radioValue4 = 0;
+    });
+  }
+
+  void _handleRadioValueChange4(int value) {
+    setState(() {
+      _radioValue1 = 0;
+      _radioValue2 = 0;
+      _radioValue3 = 0;
+      _radioValue4 = 1;
     });
   }
 
@@ -98,9 +118,9 @@ class _HappyQuizState extends State<HappyQuiz> {
                       child: Row(
                         children: [
                           Radio(
-                            value: _radioValue1,
+                            value: _radioValue2,
                             groupValue: 1,
-                            onChanged: _handleRadioValueChange1,
+                            onChanged: _handleRadioValueChange2,
                           ),
                           Flexible(
                             child: Text(
@@ -126,9 +146,9 @@ class _HappyQuizState extends State<HappyQuiz> {
                       child: Row(
                         children: [
                           Radio(
-                            value: _radioValue1,
+                            value: _radioValue3,
                             groupValue: 1,
-                            onChanged: _handleRadioValueChange1,
+                            onChanged: _handleRadioValueChange3,
                           ),
                           Flexible(
                             child: Text(
@@ -153,9 +173,9 @@ class _HappyQuizState extends State<HappyQuiz> {
                       child: Row(
                         children: [
                           Radio(
-                            value: _radioValue1,
+                            value: _radioValue4,
                             groupValue: 1,
-                            onChanged: _handleRadioValueChange1,
+                            onChanged: _handleRadioValueChange4,
                           ),
                           Flexible(
                             child: Text(
