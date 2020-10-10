@@ -1,16 +1,15 @@
-
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 class FeedScreen extends StatefulWidget {
   FeedScreen() : super();
- 
+
   final String title = "Feeds";
- 
+
   @override
   FeedScreenState createState() => FeedScreenState();
 }
- 
+
 class FeedScreenState extends State<FeedScreen> {
   //
   CarouselSlider carouselSlider;
@@ -22,13 +21,12 @@ class FeedScreenState extends State<FeedScreen> {
   //   'https://images.unsplash.com/photo-1543922596-b3bbaba80649?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
   //   'https://images.unsplash.com/photo-1502943693086-33b5b1cfdf2f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80'
   // ];
- 
+
   List feeds = [
     {
       'title': "CSVTU University Burnt Down",
       'content': "Csvtu university burnt down by some bad boys in bitd,"
     },
-
     {
       'title': "CSK WON THE IPL @)@) FINALS",
       'content': "The indian captian has once again proved it."
@@ -46,41 +44,39 @@ class FeedScreenState extends State<FeedScreen> {
     }
     return result;
   }
- 
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Stack(
-        children: [
-
-        Container(
-          // alignment: Alignment.center,
-          child: Image.asset(
-            'assets/images/Vector_9.png',
-            // height: 250,
-            // width: double.infinity,
-            // fit: BoxFit.cover,
-          ),
+        child: Stack(children: [
+      Container(
+        // alignment: Alignment.center,
+        child: Image.asset(
+          'assets/images/Vector_9.png',
+          // height: 250,
+          // width: double.infinity,
+          // fit: BoxFit.cover,
         ),
-        Container(
-            // alignment: Alignment.center,
-            margin: EdgeInsets.fromLTRB(20, 15, 0, 0),
-            child: Text(
-              widget.title,
-              style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'RobotoMono',
-                  fontSize: 30.0),
-            )),
+      ),
+      Container(
+          // alignment: Alignment.center,
+          margin: EdgeInsets.fromLTRB(20, 15, 0, 0),
+          child: Text(
+            widget.title,
+            style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'RobotoMono',
+                fontSize: 30.0),
+          )),
       Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             carouselSlider = CarouselSlider(
-            height: MediaQuery.of(context).size.height/1.5,
-              
+              height: MediaQuery.of(context).size.height / 1.5,
+
               initialPage: 0,
               enlargeCenterPage: true,
               // autoPlay: true,
@@ -96,42 +92,53 @@ class FeedScreenState extends State<FeedScreen> {
                 });
               },
               items: feeds.map((feedItem) {
-                
                 return Builder(
                   builder: (BuildContext context) {
                     return Container(
                       constraints: BoxConstraints(minWidth: 300, maxWidth: 500),
 
-                      width: MediaQuery.of(context).size.width/1.5,
+                      width: MediaQuery.of(context).size.width / 1.5,
                       margin: EdgeInsets.symmetric(horizontal: 10.0),
                       // decoration: BoxDecoration(
                       //   color: Colors.green,
                       // ),
+
                       child: Card(
                         elevation: 10,
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-           ListTile(
-            
-            title: Text(feedItem['title']),
-            subtitle: Text(feedItem['content']),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: <Widget>[
-              TextButton(
-                child: const Text('Read More'),
-                onPressed: () { /* ... */ },
-              ),
-              const SizedBox(width: 8),
-            ],
-          ),
-        ],
-      ),
-    ),
-
+                        child: Container(
+                         decoration: BoxDecoration(
+    gradient: LinearGradient(
+      colors: [Color(0Xff04354B), Color(0XffB2FEFA)],
+      begin: FractionalOffset.topCenter,
+            end: FractionalOffset.bottomCenter,
+      )
+  ), 
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                            ListTile(
+                              title: Text(feedItem['title'],
+                                      style: TextStyle(color: Colors.white.withOpacity(1)),
+),
+                              subtitle: Text(feedItem['content'],
+                                      style: TextStyle(color: Colors.white.withOpacity(0.6)),
+),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: <Widget>[
+                                TextButton(
+                                  child: const Text('Read More'),
+                                  onPressed: () {/* ... */},
+                                ),
+                                const SizedBox(width: 8),
+                              ],
+                            ),
+                          ],
+                        ),
+                        )
+                      ),
                     );
                   },
                 );
@@ -140,20 +147,17 @@ class FeedScreenState extends State<FeedScreen> {
             // SizedBox(
             //   height: 20,
             // ),
-            
           ],
         ),
       ),
-        ]
-      )
-    );
+    ]));
   }
- 
+
   goToPrevious() {
     carouselSlider.previousPage(
         duration: Duration(milliseconds: 300), curve: Curves.ease);
   }
- 
+
   goToNext() {
     carouselSlider.nextPage(
         duration: Duration(milliseconds: 300), curve: Curves.decelerate);
