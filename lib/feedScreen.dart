@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+=======
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/material.dart';
+>>>>>>> 9a246f3fe6ff1e206a5fde303246580b891673c7
 
 class FeedScreen extends StatefulWidget {
   FeedScreen() : super();
