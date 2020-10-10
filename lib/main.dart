@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tervis/happyQuizScreen.dart';
 
 import 'constants.dart';
 import 'homepageReturnScreen.dart';
@@ -34,9 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Container(
       child: Text("Feeds"),
     ),
-    Container(
-      child: Text("Happy Quiz"),
-    ),
+    HappyQuiz(),
     Container(
       child: Text("Talk"),
     ),
