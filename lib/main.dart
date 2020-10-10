@@ -3,6 +3,8 @@ import 'package:tervis/happyQuizScreen.dart';
 
 import 'constants.dart';
 import 'homepageReturnScreen.dart';
+import 'talkWithSomeone.dart';
+// import 'feedScreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -32,13 +34,12 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   final tabs = [
     HomePage(),
+    // FeedScreen(),
     Container(
-      child: Text("Feeds"),
+      child: Text("Profile"),
     ),
     HappyQuiz(),
-    Container(
-      child: Text("Talk"),
-    ),
+    TalkWithSomeone(),
     Container(
       child: Text("Profile"),
     )
