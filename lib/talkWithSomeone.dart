@@ -62,10 +62,18 @@ class TalkWithSomeone extends StatelessWidget {
               child: Column(
                 children: [
                   const ListTile(
-                    title: Text('Talk With an Expert'),
+                    title: Text(
+                      'Talk With an Expert',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                     contentPadding: EdgeInsets.fromLTRB(20, 10, 10, 15),
-                    subtitle: Text(
-                        'Hi, I am expert you can talk with me expert since 1 hour'),
+                    subtitle: Align(
+                      child: Text(
+                        'Hi, I am expert you can talk with me expert since 1 hour',
+                      ),
+                      alignment: Alignment(15, 0),
+                    ),
                   )
                 ],
               ),

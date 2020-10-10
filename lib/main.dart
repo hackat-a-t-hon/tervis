@@ -4,7 +4,7 @@ import 'package:tervis/happyQuizScreen.dart';
 import 'constants.dart';
 import 'homepageReturnScreen.dart';
 import 'talkWithSomeone.dart';
-// import 'feedScreen.dart';
+import 'profileScreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -40,9 +40,7 @@ class _SplashScreenState extends State<SplashScreen> {
     ),
     HappyQuiz(),
     TalkWithSomeone(),
-    Container(
-      child: Text("Profile"),
-    )
+    ProfileScreen(),
   ];
   int _currentIndex = 0;
   @override
