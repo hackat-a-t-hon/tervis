@@ -11,6 +11,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       initialRoute: "/",
+      routes: {
+        '/': (context) => SplashScreen(),
+      },
       home: SplashScreen(),
     );
   }
