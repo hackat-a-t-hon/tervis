@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'constants.dart';
+import 'talkWithSomeone.dart';
 
 void main() {
   runApp(MyApp());
@@ -37,9 +38,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Container(
       child: Text("Happy Quiz"),
     ),
-    Container(
-      child: Text("Talk"),
-    ),
+    TalkWithSomeone(),
     Container(
       child: Text("Profile"),
     )
