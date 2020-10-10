@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'constants.dart';
 import 'talkWithSomeone.dart';
-import 'feedScreen.dart';
+import 'profileScreen.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -32,14 +33,12 @@ class _SplashScreenState extends State<SplashScreen> {
     Container(
       child: Text("Home"),
     ),
-    FeedScreen(),
+    // FeedScreen(),
     Container(
       child: Text("Happy Quiz"),
     ),
     TalkWithSomeone(),
-    Container(
-      child: Text("Profile"),
-    )
+    ProfileScreen(),
   ];
   int _currentIndex = 0;
   @override
