@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'constants.dart';
+import 'homepageReturnScreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,6 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       initialRoute: "/",
       routes: {
@@ -27,11 +29,26 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  final tabs = [1, 2, 3, 4];
+  final tabs = [
+    HomePage(),
+    Container(
+      child: Text("Feeds"),
+    ),
+    Container(
+      child: Text("Happy Quiz"),
+    ),
+    Container(
+      child: Text("Talk"),
+    ),
+    Container(
+      child: Text("Profile"),
+    )
+  ];
   int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: tabs[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         unselectedItemColor: kPrimaryGray,
