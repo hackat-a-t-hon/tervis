@@ -21,11 +21,7 @@ packages:
       name: carousel_slider
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
-    version: "1.3.0"
-=======
     version: "1.4.1"
->>>>>>> 9a246f3fe6ff1e206a5fde303246580b891673c7
   characters:
     dependency: transitive
     description:
