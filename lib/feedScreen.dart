@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'dart:html' as html;
 
 class FeedScreen extends StatefulWidget {
   FeedScreen() : super();
@@ -24,16 +25,28 @@ class FeedScreenState extends State<FeedScreen> {
 
   List feeds = [
     {
-      'title': "CSVTU University Burnt Down",
-      'content': "Csvtu university burnt down by some bad boys in bitd,"
+      'title': "Motivation: The Scientific Guide on How to Get and Stay Motivated",
+      'content': '''Motivation is a powerful, yet tricky beast. Sometimes it is really easy to get motivated, and you find yourself wrapped up in a whirlwind of excitement. Other times, it is nearly impossible to figure out how to motivate yourself and you're trapped in a death spiral of procrastination. This page contains the best ideas and most useful research on how to get and stay motivated.
+This isn't going to be some rah-rah, pumped-up motivational speech.
+''',
+  'url': 'https://jamesclear.com/motivation#How%20to%20Get%20Motivated'
     },
     {
-      'title': "CSK WON THE IPL @)@) FINALS",
-      'content': "The indian captian has once again proved it."
+      'title': "How to Stay Motivated by Using the Goldilocks Rule",
+      'content': '''
+      Imagine you are playing tennis. If you try to play a serious match against a four-year-old, you will quickly become bored. The match is too easy. On the opposite end of the spectrum, if you try to play a serious match against a professional tennis player like Roger Federer or Serena Williams, you will find yourself demotivated for a different reason. The match is too difficult.
+
+Compare these experiences to playing tennis against someone who is your equal.''',
+'url': "https://jamesclear.com/motivation#How%20to%20Stay%20Motivated",
     },
     {
-      'title': "Tervis, a mental health app",
-      'content': "team tervis from bitd won the hack the mountain hackathon."
+      'title': "What to Do When Motivation Fades",
+      'content': '''Inevitably, your motivation to perform a task will dip at some point. What happens when motivation fades? I don't claim to have all the answers, but here’s what I try to remind myself of when I feel like giving up.
+
+Your Mind is a Suggestion Engine
+
+Consider every thought you have as a suggestion, not an order. Right now, as I'm writing this, my mind is suggesting that I feel tired. It is suggesting that I give up. It is suggesting that I take an easier path.''',
+"url": "https://jamesclear.com/motivation#What%20to%20Do%20When%20Motivation%20Fades",
     },
   ];
 
@@ -119,21 +132,28 @@ class FeedScreenState extends State<FeedScreen> {
                                   title: Text(
                                     feedItem['title'],
                                     style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20,
+                                        height: 2,
                                         color: Colors.white.withOpacity(1)),
                                   ),
                                   subtitle: Text(
                                     feedItem['content'],
                                     style: TextStyle(
-                                        color: Colors.white.withOpacity(0.6)),
+                                      fontWeight: FontWeight.normal,
+                                      fontSize:18,
+                                      height: 1.2,
+                                        color: Colors.white.withOpacity(0.9)),
                                   ),
                                 ),
                                 Row(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: <Widget>[
                                     TextButton(
+                                      
                                       child: const Text('Read More'),
-                                      onPressed: () {/* ... */},
+                                      onPressed: () {html.window.open(feedItem["url"], 'feed');},
                                     ),
                                     const SizedBox(width: 8),
                                   ],
@@ -165,3 +185,4 @@ class FeedScreenState extends State<FeedScreen> {
         duration: Duration(milliseconds: 300), curve: Curves.decelerate);
   }
 }
+
