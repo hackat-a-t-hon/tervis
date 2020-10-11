@@ -56,6 +56,7 @@ class TalkWithSomeone extends StatelessWidget {
         Container(
             width: 350,
             height: 150,
+            // alignment: Alignment.center,
             margin: EdgeInsets.fromLTRB(60, 250, 10, 0),
             padding: EdgeInsets.all(10),
             child: Card(
@@ -84,6 +85,7 @@ class TalkWithSomeone extends StatelessWidget {
         Container(
             width: 350,
             height: 150,
+            // alignment: Alignment.center,
             margin: EdgeInsets.fromLTRB(10, 460, 0, 0),
             padding: EdgeInsets.all(10),
             child: Card(
