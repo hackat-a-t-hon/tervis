@@ -28,7 +28,7 @@ class ProfileScreen extends StatelessWidget {
           Container(
             alignment: Alignment.topCenter,
             child: Image.asset(
-              'assets/images/profilehai.png',
+              'assets/images/carolinie.jpg',
               height: 120,
               width: double.infinity,
               fit: BoxFit.cover,
@@ -202,12 +202,6 @@ class ProfileScreen extends StatelessWidget {
         Container(
           alignment: Alignment.topCenter,
           margin: EdgeInsets.all(10.0),
-          // color: Colors.white,
-          // decoration: BoxDecoration(
-          //   color: Colors.white,
-          //   shape: BoxShape.rectangle,
-          //   borderRadius: BorderRadius.all(Radius.circular(10.0)),
-          // ),
           child: Material(
             color: Colors.white,
             elevation: 14.0,
@@ -268,14 +262,9 @@ class ProfileScreen extends StatelessWidget {
               ),
             ),
           ),
-          // child: Image.asset(
-          //   'assets/images/Vector11.png',
-          //   // height: 120,
-          //   width: double.infinity,
-          //   fit: BoxFit.cover,
-          // ),
         ),
         Container(
+          margin: EdgeInsets.all(10.0),
           child: Material(
             color: Colors.white,
             elevation: 14.0,
