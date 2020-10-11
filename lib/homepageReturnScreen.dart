@@ -1,8 +1,6 @@
-// import 'package:audioplayers/audioplayers.dart';
-
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-// import 'package:just_audio/just_audio.dart';
 import 'package:tervis/constants.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,6 +9,23 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  AudioPlayer audioPlayer = AudioPlayer();
+  play() async {
+    int result = await audioPlayer.play(
+        "https://www.mboxdrive.com/Headspace - Take Series - Day 1 - Part 2.mp3");
+    if (result == 1) {
+      // success
+    }
+  }
+
+  play2() async {
+    int result = await audioPlayer.play(
+        "https://www.mboxdrive.com/2019-04-26_-_Tranquility_-_www.fesliyanstudios.com.mp3");
+    if (result == 1) {
+      // success
+    }
+  }
+
   var isSelected = [false, false];
   bool isAudioPlaying = false;
   String textIn = "Press A Button To\n Start";
@@ -77,10 +92,20 @@ class _HomePageState extends State<HomePage> {
               isSelected: isSelected,
               onPressed: (index) {
                 // play(audioPlayer);
+
                 setState(() {
                   isSelected[index] = !isSelected[index];
                   isSelected[(index + 1) % 2] = false;
+                  if (isSelected[0]) {
+                    play2();
+                  }
+                  if (isSelected[1]) {
+                    play();
+                  }
                   textIn = decideText(isSelected);
+                  if (!isSelected[0] && !isSelected[1]) {
+                    audioPlayer.stop();
+                  }
                 });
               },
               color: kSecondaryBlue,
@@ -105,11 +130,4 @@ decideText(isSelected) {
   if (isSelected[1]) {
     return "Breathe";
   }
-}
-
-play(audioPlayer) async {
-  debugPrint("Hello");
-  var duration = await audioPlayer.setUrl(
-      "https://drive.google.com/file/d/1fZHgfBC4WsptlQ9Sydm9tI166Ycf_Ssx/view?usp=sharing");
-  audioPlayer.play();
 }
